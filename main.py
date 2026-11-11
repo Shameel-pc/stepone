@@ -5,6 +5,11 @@ import os
 #geting the image file name from the user
 image = input("Enter the image file name (including the extension): ")
 
+#the width value to change the magnification
+
+width = 500
+
+
 #setting thr treshold valure which the pixel value will be compared to
 
 a = 25
@@ -25,8 +30,8 @@ img = Image.open(os.path.join(main_path, image)).convert("L")
 
 
 #rezing the image to counter the fact that the height of terminal charector is double of its widhth
-w, h = img.size
-img = img.resize((500, int(((h / w) * 500) // 2.4)))
+w, h1 = img.size
+img = img.resize((width, int(((h1 / w) * width) // 2.7)))
 
 #converting the image to an numpy array
 img_arr = np.array(img)
